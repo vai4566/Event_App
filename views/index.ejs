@@ -1,0 +1,42 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <%- include('partial/nav') %>
+    <div>
+      <h2>All events</h2>
+      <div>
+        <% if (events.length> 0) { %>
+          <% events.forEach(event=> { %>
+            <div>
+              <h3>
+                <%= event.title %>
+              </h3>
+              <p>
+                <%= event.description %>
+              </p>
+              <p>
+                    <%= event.date %>
+                  </p>
+                  <p>
+                    <%= event.organizer %>
+                  </p>
+                  <p>
+                    <%= event.location %>
+                  </p>
+                  <p>
+                    <%= event.price %>
+                  </p>
+            </div>
+            <% }) %>
+              <% } else { %>
+                <p>No events available at the moment.</p>
+                <% } %>
+      </div>
+    </div>
+</body>
+
+</html>
