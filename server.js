@@ -24,7 +24,8 @@ app.use(express.urlencoded({ extended: true }));
 
     Event.findById(id)
         .then((result) => {
-            res.render('event', { event: [result] });
+          console.log(result)
+            res.render('partial/event', { event: result });
         })
         .catch((err) => {
             console.log(err);
